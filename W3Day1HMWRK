@@ -1,0 +1,53 @@
+class Cart():
+    #quantity=0
+    #shopping_cart = {} #decleared an empty shopping cart to 
+    def __init__(self):
+        self.items = {}
+        
+    def add_item(self):
+        """ a function thst adds items to the cart"""
+        item = input("what would you like to add?")
+        quantity = int(input(f"how many {item} would you like?"))
+        
+        if  item not in self.items:
+            self.items[ item] = quantity   # adds the item(key) and its quantity(value)q to the store(dict)   
+            print(f"{item} has been added to your shopping cart")
+
+    def remove_item(self):
+        """ a function to remove items from the cart"""
+        item = input("what would you like to remove")
+        if item in self.items:
+            del self.items[item]
+            print(f"{item} has been deleted from your shopping cart")
+        else:
+            print("you don't have this ittem in the cart")
+        
+        
+
+    def show_shopping_cart(self):
+        """ a function that shows items in the cart"""
+        print(f" your cart contains: { self.items}")
+        
+    def run(self):
+    
+        while True:
+            user_choice = input("What would you like to do? add, remove, show, or 'q' to quit")
+            
+            if user_choice.lower() == 'add':
+                self.add_item()
+
+            elif user_choice.lower() == 'remove':
+                self.remove_item()
+                
+            elif user_choice.lower() == "show":
+                self.show_shopping_cart()
+                
+            elif user_choice.lower() == "q":
+                self.show_shopping_cart()
+                print("thank you for shopping with us")
+                break
+            else: 
+                print("Please enter a valid response")
+    #run(2,6)
+my_cart=Cart()
+my_cart.run()
