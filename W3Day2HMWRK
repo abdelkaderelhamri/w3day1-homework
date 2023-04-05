@@ -51,3 +51,19 @@ class Cart():
     #run(2,6)
 my_cart=Cart()
 my_cart.run()
+
+#Exercise2:
+#Python Class with two methods get_String and print_String
+class String1():
+    def __init__(self):
+        self.str1 = ""
+
+    def get_String(self):
+        self.str1 = input()
+
+    def print_String(self):
+        print(self.str1.upper())
+
+str1 = String1()
+str1.get_String()
+str1.print_String()
